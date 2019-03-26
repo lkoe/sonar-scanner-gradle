@@ -93,7 +93,7 @@ public abstract class AbstractGradleIT {
     } else {
       command.add("/bin/bash");
     }
-    command.addAll(Arrays.asList("gradlew", "--stacktrace", "--no-daemon"));
+    command.addAll(Arrays.asList("gradlew", "-d", "--stacktrace", "--no-daemon"));
     command.addAll(Arrays.asList(args));
     ProcessBuilder pb = new ProcessBuilder(command)
         .directory(tempProjectDir)

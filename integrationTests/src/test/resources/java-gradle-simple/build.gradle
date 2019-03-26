@@ -3,7 +3,7 @@ buildscript {
       mavenCentral()
       mavenLocal()
     }
-    dependencies { classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${version}' }
+    dependencies { classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8-SNAPSHOT' }
 }
 
 apply plugin: 'java'
@@ -34,6 +34,12 @@ test {
 
 jacoco {
   toolVersion = "0.7.0.201403182114"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
 }
 
 dependencies {
